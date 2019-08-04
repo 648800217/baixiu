@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <?php
+error_reporting(0); 
  include_once "./fu.php";
   if(!empty($_POST)){
-    echo "<pre>";
-    print_r($_POST);
-   echo "</pre>";
+  //   echo "<pre>";
+  //   print_r($_POST);
+  //  echo "</pre>";
    $user=$_POST[ 'email'];
    $pass=$_POST['pass']; 
   
@@ -15,16 +16,19 @@
    }
    else{
       $sql="select * from users where email='$user'";
-  $res=cx($sql);
-  $req=$res[0];
+        $res=cx($sql);
+        $data=$res[0];
         // echo '<pre>';
-        // print_r( $req);
+        // print_r( $data);
         // print_r( cx($sql));
         // echo "</pre>"; 
-        if($req['password']===$pass){
+        if($data['password']===$pass){
           header('location:index1.php');
-        }else{
-          $err= "用户名或密码错误";
+          session_start();
+          $_SESSION['user_id']=$data["id"];
+        }
+        else{
+         $err= "用户名或密码错误";
         };
    };
 
@@ -49,7 +53,8 @@
       <?php } ?>
       <div class="form-group">
         <label for="email" class="sr-only">邮箱</label>
-        <input id="email" type="text" class="form-control"  name ="email" placeholder="邮箱" autofocus>
+        <input id="email" type="text" class="form-control"  name ="email" placeholder="邮箱" 
+        value="<?php echo isset( $user) ? $user : ''?>" autofocus >
       </div>
       <div class="form-group">
         <label for="password" class="sr-only" >密码</label>

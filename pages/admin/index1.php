@@ -1,4 +1,20 @@
 <!DOCTYPE html>
+<?php
+session_start();
+  // echo $_SESSION['user_id'];
+  if(!$_COOKIE['PHPSESSID']){
+header('location:login.php');
+  }else{
+    session_start();
+    if(isset($_SESSION['user_id'])){
+
+    }else{
+      header('locaion:login.php');
+    }
+  }
+
+
+?>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
