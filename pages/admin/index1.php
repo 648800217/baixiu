@@ -1,18 +1,7 @@
 <!DOCTYPE html>
 <?php
-session_start();
-  // echo $_SESSION['user_id'];
-  if(!$_COOKIE['PHPSESSID']){
-header('location:login.php');
-  }else{
-    session_start();
-    if(isset($_SESSION['user_id'])){
-
-    }else{
-      header('locaion:login.php');
-    }
-  }
-
+include_once "./gonggong/lanjie.php";
+islogin();
 
 ?>
 <html lang="zh-CN">

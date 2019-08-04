@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php
+include_once "./gonggong/lanjie.php";
+islogin();
+
+?>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">

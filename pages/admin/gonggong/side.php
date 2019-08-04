@@ -1,9 +1,35 @@
 
+<?php
+  // session_start();
+  $id=$_SESSION['user_id'];
+  echo $id;
+  include_once "./fu.php";
+  $sql="select * from users where id='$id'";
+  $res=cx($sql);
+  echo '<pre>';
+  print_r($res);
+  echo '</pre>'
+// =============
+// Array
+// (
+//     [0] => Array
+//         (
+//             [id] => 2
+//             [slug] => zce
+//             [email] => w@zce.me
+//             [password] => 123
+//             [nickname] => 飞飞
+//             [avatar] => ../uploads/dog.jpg
+//             [bio] => 
+//             [status] => activated
+//         )
 
+// )
+?>
 <div class="aside">
 <div class="profile">
-  <img class="avatar" src="../uploads/avatar.jpg">
-  <h3 class="name">布头儿</h3>
+  <img class="avatar" src="<?php echo $res[0]['avatar']?>">
+  <h3 class="name"><?php echo $res[0]['nickname']?></h3>
 </div>
 <ul class="nav">
   <li class="active">

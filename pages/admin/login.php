@@ -26,6 +26,7 @@ error_reporting(0);
           header('location:index1.php');
           session_start();
           $_SESSION['user_id']=$data["id"];
+          
         }
         else{
          $err= "用户名或密码错误";
