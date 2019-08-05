@@ -12,7 +12,8 @@
   
   $isarr=in_array($ym,$arr);
   $isarr1=in_array($ym,$arr1);
-  
+
+  // echo $res;
   // echo $isarr ? 1:2;
 
   // echo '<pre>';
@@ -41,6 +42,8 @@
   <h3 class="name"><?php echo $res[0]['nickname']?></h3>
 <p style="color:red">  <?php
       echo $page;
+ 
+    
     
     ?></p>
 </div>
@@ -49,7 +52,7 @@
     <a href="index1.php"><i class="fa fa-dashboard"></i>仪表盘</a>
  
   </li>
-  <li class="<?php echo $isarr ? 'active':'' ?> " >
+  <li class="<?php echo $isarr ? 'active':'' ?> "  >
     <a href="#menu-posts" class="collapsed" data-toggle="collapse">
       <i class="fa fa-thumb-tack"></i>文章<i class="fa fa-angle-right"></i>
     </a>

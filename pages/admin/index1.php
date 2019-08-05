@@ -1,8 +1,22 @@
 <!DOCTYPE html>
 <?php
 include_once "./gonggong/lanjie.php";
+include_once "./fu.php";
 islogin();
 $page='index1';
+$sql="select count(*) as total FROM posts";
+$wz=cx($sql);
+$sql="select count(*) as total FROM categories";
+$fl=cx($sql);
+$sql="select count(*) as total FROM comments";
+$pl=cx($sql);
+$sql="select count(*) as total FROM posts where status='drafted'";
+$cg=cx($sql);
+$sql="select count(*) as total FROM comments where status='held'";
+$sh=cx($sql);
+// echo "<pre>";
+// print_r($wz['0']);
+// echo "</pre>";
 ?>
 <html lang="zh-CN">
 <head>
@@ -32,9 +46,9 @@ $page='index1';
               <h3 class="panel-title">站点内容统计：</h3>
             </div>
             <ul class="list-group">
-              <li class="list-group-item"><strong>10</strong>篇文章（<strong>2</strong>篇草稿）</li>
-              <li class="list-group-item"><strong>6</strong>个分类</li>
-              <li class="list-group-item"><strong>5</strong>条评论（<strong>1</strong>条待审核）</li>
+              <li class="list-group-item"><strong><?php echo $wz['0']['total']?></strong>篇文章（<strong><?php echo $cg['0']['total']?></strong>篇草稿）</li>
+              <li class="list-group-item"><strong><?php echo $fl['0']['total']?></strong>个分类</li>
+              <li class="list-group-item"><strong><?php echo $pl['0']['total']?></strong>条评论（<strong><?php echo $sh['0']['total']?></strong>条待审核）</li>
             </ul>
           </div>
         </div>
