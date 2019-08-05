@@ -2,7 +2,7 @@
 <?php
 include_once "./gonggong/lanjie.php";
 islogin();
-
+$page='categories';
 ?>
 <html lang="zh-CN">
 <head>

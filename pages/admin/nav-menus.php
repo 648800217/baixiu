@@ -2,7 +2,7 @@
 <?php
 include_once "./gonggong/lanjie.php";
 islogin();
-
+$page='nav-menus';
 ?>
 <html lang="zh-CN">
 <head>

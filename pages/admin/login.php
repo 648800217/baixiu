@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+$page='login';
 error_reporting(0); 
  include_once "./fu.php";
   if(!empty($_POST)){
